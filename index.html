@@ -837,11 +837,7 @@ function buildSrc(url) {
 
 function startExperience() {
   document.getElementById('startOverlay').style.display = 'none';
-  // Load music - scPlayer already in DOM so no null error
-  document.getElementById('scPlayer').src = buildSrc(tracks[trackIndex]);
-  musicPlaying = true;
-  document.querySelectorAll('.wave').forEach(w => w.style.animationPlayState = 'running');
-  // No auto-retry to avoid music interruption
+  setTimeout(playMusic, 300);
 }
 
 function playMusic() {
